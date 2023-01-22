@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tuto4.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="les-routes-en-laravel">LES ROUTES EN LARAVEL</h1>
+<h2 id="tuto-04">Tuto 04</h2>
+<blockquote>
+<p>Plan du tuto</p>
+<ul>
+<li>Introduction</li>
+<li>Création de route en laravel</li>
+<li>Les méthodes HTTP</li>
+<li>La fonction de rappel (Callback)</li>
+<li>Conclusion</li>
+</ul>
+</blockquote>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+<p>Il est très important de définir que ce soit dans votre site ou application web des routes qui ont un sens et qui sont aisément lisible par les utilisateurs. Un route permet d'associer un URI(Identifiant de Ressources Uniformes) à un code spécifique.</p>
+<p>Heureusement, Laravel fournit un systéme de route très simple d'usage. La liste des routes d'un projet laravel se retrouve dans le dossier Routes et dans le fichier web.php. A chaque qu'une nouvelle pages ou vues s'ajoute à votre projet il faudra donc modifier ce fichier afin de pouvoir accéder à votre via le navigateur.</p>
+<h2 id="cr%C3%A9ation-dun-route"><strong>Création d'un route</strong></h2>
+<p>Pour definir une route en laravel, on appelle la classe <strong>Route</strong> précédée de la méthode <strong>HTTP</strong> souhaitée. Nous indiquerons alors à cette méthode l'URI et le code qui sera exécuté une fois qu'on accède au lien.</p>
+<p>Exemple:</p>
+<pre class="hljs"><code><div>Route::get('accueil', function(){
+    return &quot;Bienvenue sur Qk Learn&quot;;
+});
+</div></code></pre>
+<p>Ici, quand on accède à la page /accueil du projet dans un navigateur on verra affiché le message &quot;Bienvenue sur Qk Learn&quot;.</p>
+<p>On remarque que dans ce exemple la méthode HTTP utilisée est GET. Il existe d'autres méthodes HTTP que vous aurez à utiliser selon les situations. Dans le prochains paragraphe je vous présente quelques méthodes HTTP (les plus utilisées).</p>
+<h2 id="quelques-m%C3%A9thodes-http"><strong>Quelques  méthodes HTTP</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Méthodes HTTP</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>C'est la méthode la plus courante pour demander une ressource. Une requête GET est sans effet sur la ressource, il doit être possible de répéter la requête sans effet.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Cette méthode permet de transférer des données vers la ressource spécifiée. Elle est le plus souvent utilisée dans les formmulaires.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Elle est utilisé pour mettre à jour ou pour remplacer une ressource existente sur le serveur.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Elle supprime la ressource qui lui sera indiquéé</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Cette méthode nous permet d'apporter des modifications partielle à une ressource existente.</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>Cette méthode est utilisé pour retrouver l'entete qui serait affichée si une resource est demandée par la méthode HTTP Get.</td>
+</tr>
+</tbody>
+</table>
+<p>NB: Voici les quelques méthodes HTTP les plus utilisées dans les projets web. Cette liste n'est bien sur pas exaustive, je vous invite donc à visiter wikipédia pour en savoir plus au sujet des méthodes HTTP.</p>
+<h2 id="la-fonction-de-rappel-callback"><strong>La fonction de rappel (Callback)</strong></h2>
+<p>Encore appelée fonction anonyme, les fonction de rappel ou les Callback sont utilisées pour renoyer une reponse . On l'ecrit généralement dans le fichier web.php . Cette fonction doit contenir l'instruction <strong>return</strong> afin de retourner quelque chose dans le navigateur.</p>
+<p>On peut écrire du code PHP dans une fonction callback.</p>
+<p>Code:</p>
+<pre class="hljs"><code><div>Route::get('article/{id}', function($id){
+    $article = get_article($id);
+    return $article;
+});
+</div></code></pre>
+<p>Dans l'exemple on a une route GET qui accède à un article spécifié par son id via l'URI <strong>/article/{id}</strong>.</p>
+<p>On recupère l'id en paramètre dans la fonction <strong>callback</strong> et on affiche l'article indiqué dans le navigateur.</p>
+<p>Ici on suppose qu'on a deja defini une fonction get_article  qui se charge de recuperer l'article ayant l'id spécifié dans la base de données.</p>
+<p>On retourne alors l'article dans l'instruction <strong>return</strong>.</p>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>Félicitation nous venons de parcourir ensemble les notions de routes, de méthodes HTTP et tde callback en laravel. Nous avons aaussi abordé la notion de paramétres dans la definition de route. Pour en savoir plus sur la notion de paramètre dans une route, je vous invite à cliquer sur ce lien : <a href="/tuto05.html">Notion de paramètres dans les routes</a></p>
+
+</body>
+</html>

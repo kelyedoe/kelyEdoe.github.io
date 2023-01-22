@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px, 10px/16px= 62.5
+}
+
+body{
+    font-family: 'lato';
+    font-weight: 400;
+    line-height: 1.6;  
+}
+.logo{
+    width: 5rem;
+    height: 4rem;
+    margin-left: 1rem;
+}
+
+.header{
+    position: absolute;
+    padding: 3rem;
+    height: 95vh;
+    //width: 100%; 95vh
+    background-image: linear-gradient(to right bottom, rgba(#32CD30, 0.8), rgba(#2C5E1A, 0.8));
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    display: flex;
+    align-items:flex-start ;
+    justify-content: space-between;
+    //6overflow: hidden;
+
+    &__navigation--list{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        list-style:none;
+        font-size: 1.5rem;
+
+        @include respond(tab-port){
+            display: grid;
+            grid-template-columns: 1fr;
+            overflow: hidden;
+        }
+    }
+
+    &__navigation--link:link,
+    &__navigation--link:visited{
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 1.5rem 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 10;
+
+        @include respond(tab-port){
+            
+            display: inline-block;
+            margin: 5px;
+            text-align: center;
+        }
+        
+    }
+
+    &__navigation--link:hover, &__navigation--link:active{
+        
+            color: #fff;
+            box-shadow: 0 1rem 2rem rgba($color-black, .4);
+            transform:  scale(1.3);
+
+           
+        
+    }
+
+    &__link-icon{
+        width: 1.75rem;
+        height: 1.75rem;
+        color: #fff;
+        fill: #fff;
+        
+
+        @include respond(tab-port){
+            padding-right: 2rem;        
+        }
+        
+    }
+ 
+}
+
+
+    .introduction{
+        padding: 7rem;
+        margin-left: 15rem;
+        margin-right: 15rem;
+        margin-bottom: 3rem;       
+        text-align: center; 
+        
+        //flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @include respond(tab-port){
+            grid-template-columns: 1fr;
+            margin: 2rem;
+            padding: auto;
+        }
+
+        &__text-header{
+            font-weight: 700;
+            font-size: 4rem;
+            color: #2C5E1A;
+            font-family: 'lato';
+            @include respond(tab-port){
+                font-size: 2rem;
+
+            }
+        
+        }
+        &__text-subheader{
+            font-weight: 700;
+            font-size: 3rem;
+            color: #1A4314;
+            @include respond(tab-port){
+                font-size: 1.5rem;
+                
+            }
+        }
+        &__text-paragraphe{
+            font-size: 2rem;
+
+            @include respond(tab-port){
+                font-size: 1.3rem;   
+            }
+        }
+        
+    }
+
+.profile-image{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    border: 7px solid #B2D2A4;
+}
+.qk{
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: fantasy;
+    color: #1A4314;
+}
+.laravel{
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: fantasy;
+    color: #1A4314;   
+}
+
+.toggle-btn{
+    width: 35px;
+    position: absolute;
+    right:80px ;
+    top: 40px;
+    display: none;
+
+}
+
+@include respond(tab-port){
+    .toggle-btn{
+        display: block;  
+    } 
+    .header__navigation{
+        display: none;
+    }
+    nav{
+        display: none;
+        width: 100%;
+       // border-top: 1px solid #000;
+        padding-top: 40px;
+        margin-top: 30px;
+    }
+    nav ul li{
+        padding: 15px 0px;
+        width: 100%;
+    }
+    nav.show{
+        display: block;
+    }
+    
+}
+
+
+.toggle-btn span{
+    display: inline-block;
+    width: 100%;
+    height: 2px ;
+    background-color: #FFF;
+    float: left;
+    margin-bottom: 8px;
+    
+}

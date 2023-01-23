@@ -14,25 +14,31 @@
 
     &__row{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         margin: 4rem;
-        
+        text-align: center;
+
+
+        @include respond(tab-port){
+            grid-template-columns: repeat(2, 1fr);
+            margin: 2rem;
+        }
     } 
     
-    &__link{
+    &__link:link, &__link:visited{
         text-decoration: none;
         font-size: 1rem;
         color: #1F2226;
         font-weight: 800;
     }
+    &__link:hover, &__link:active{
+        transform: scale(1.3);
+        background-color: chartreuse;
+    }
 }
 .contact__row--reseau{
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    
-    @include respond(tab-port){
-        grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr); 
     
 }
 

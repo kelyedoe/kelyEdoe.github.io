@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px, 10px/16px= 62.5
+}
+
+body{
+    font-family: 'lato';
+    font-weight: 400;
+    line-height: 1.6;  
+}
+.projects{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    //background-color: #1F2226;
+
+    @include respond(tab-port){
+        grid-template-columns: repeat(1, 1fr);
+    } 
+}
+
+.project{
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+    gap: 1.2rem;
+    background-color: #1F2226;
+    border-radius: 1.5rem;
+    margin: 7rem;
+    padding: 3rem;
+
+    &__title{
+        font-size: 2rem;
+        font-weight: 700;
+        color: #03FF00 ;
+    }
+    &__description{
+        //margin-top: 2rem;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #fff;
+        font-family: 'lato';
+    }
+    &__tags{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3px;
+        padding: 0 , 1.2rem;
+
+        @include respond(tab-port){
+            grid-template-columns: repeat(2, 1fr);
+        } 
+
+    }
+    &__tags--button{
+        border: 1px solid #03FF00;
+        color: #fff;
+        height: 2rem;
+        text-align: center;
+        //background-color: orangered;
+        border-radius: 3rem;
+    }
+
+    &__buttons{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding-top: 3rem;
+        
+    }
+    &__buttons--media{
+        
+    }
+}
+
+.view{
+    background-color: #41ab1b;
+    text-align: center;
+    height: 5rem;
+    width: 8rem;
+    color: #fff;
+    border-radius: 1.3rem;
+}
+

@@ -308,20 +308,25 @@ body {
     font-weight: 700; }
   .contact__row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 4rem; }
-  .contact__link {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 4rem;
+    text-align: center; }
+    @media (max-width: 56.25em) {
+      .contact__row {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 2rem; } }
+  .contact__link:link, .contact__link:visited {
     text-decoration: none;
     font-size: 1rem;
     color: #1F2226;
     font-weight: 800; }
+  .contact__link:hover, .contact__link:active {
+    transform: scale(1.3);
+    background-color: chartreuse; }
 
 .contact__row--reseau {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); }
-  @media (max-width: 56.25em) {
-    .contact__row--reseau {
-      grid-template-columns: repeat(2, 1fr); } }
+  grid-template-columns: repeat(2, 1fr); }
 
 .reseau__icon {
   text-align: center;
@@ -338,3 +343,68 @@ body {
   height: 1.75rem;
   color: #36454F;
   fill: #36454F; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: 'lato';
+  font-weight: 400;
+  line-height: 1.6; }
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 56.25em) {
+    .projects {
+      grid-template-columns: repeat(1, 1fr); } }
+
+.project {
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  gap: 1.2rem;
+  background-color: #1F2226;
+  border-radius: 1.5rem;
+  margin: 7rem;
+  padding: 3rem; }
+  .project__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #03FF00; }
+  .project__description {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff;
+    font-family: 'lato'; }
+  .project__tags {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    padding: 0 , 1.2rem; }
+    @media (max-width: 56.25em) {
+      .project__tags {
+        grid-template-columns: repeat(2, 1fr); } }
+  .project__tags--button {
+    border: 1px solid #03FF00;
+    color: #fff;
+    height: 2rem;
+    text-align: center;
+    border-radius: 3rem; }
+  .project__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 3rem; }
+
+.view {
+  background-color: #41ab1b;
+  text-align: center;
+  height: 5rem;
+  width: 8rem;
+  color: #fff;
+  border-radius: 1.3rem; }

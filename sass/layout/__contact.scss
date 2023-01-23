@@ -20,11 +20,18 @@
     }
 
     &__row--reseau{
-        box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53);
+        /* box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53);
         -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53);
-        -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53); 
+        -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53);  */
 
-    }    
+    }  
+    
+    &__link{
+        text-decoration: none;
+        font-size: 1rem;
+        color: #1F2226;
+        font-weight: 800;
+    }
 }
 .contact__row{
     display: grid;
@@ -37,13 +44,16 @@
     text-align: center;
     font-size: 2rem !important;
     color: #2C5E1A;
+    fill: #2C5E1A !important;
 }
 .reseau__text{
     text-align: center;
     font-size: 2rem;
 }
-.header__link-icon{
-    color: #2C5E1A;
-    font-size: 1rem;
-    //background-color: orangered;
+.contact__icon{
+    width: 1.75rem;
+        height: 1.75rem;
+        color: #36454F;
+        fill: #36454F;
 }
+

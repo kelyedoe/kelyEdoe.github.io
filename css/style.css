@@ -316,11 +316,11 @@ body {
     color: #1F2226;
     font-weight: 800; }
 
-.contact__row {
+.contact__row--reseau {
   display: grid;
   grid-template-columns: repeat(4, 1fr); }
   @media (max-width: 56.25em) {
-    .contact__row {
+    .contact__row--reseau {
       grid-template-columns: repeat(2, 1fr); } }
 
 .reseau__icon {

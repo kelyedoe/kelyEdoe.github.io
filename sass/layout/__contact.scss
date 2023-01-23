@@ -26,9 +26,10 @@
         font-weight: 800;
     }
 }
-.contact__row{
+.contact__row--reseau{
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
+    
     @include respond(tab-port){
         grid-template-columns: repeat(2, 1fr);
     }

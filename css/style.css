@@ -310,10 +310,6 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 4rem; }
-  .contact__row--reseau {
-    /* box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53);
-        -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53);
-        -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53);  */ }
   .contact__link {
     text-decoration: none;
     font-size: 1rem;
@@ -323,6 +319,9 @@ body {
 .contact__row {
   display: grid;
   grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 56.25em) {
+    .contact__row {
+      grid-template-columns: repeat(2, 1fr); } }
 
 .reseau__icon {
   text-align: center;

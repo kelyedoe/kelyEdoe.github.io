@@ -17,14 +17,7 @@
         grid-template-columns: repeat(2, 1fr);
         margin: 4rem;
         
-    }
-
-    &__row--reseau{
-        /* box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53);
-        -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53);
-        -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.53);  */
-
-    }  
+    } 
     
     &__link{
         text-decoration: none;
@@ -36,6 +29,9 @@
 .contact__row{
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
+    @include respond(tab-port){
+        grid-template-columns: repeat(2, 1fr);
+    }
     
 }
 
@@ -52,8 +48,12 @@
 }
 .contact__icon{
     width: 1.75rem;
-        height: 1.75rem;
-        color: #36454F;
-        fill: #36454F;
+    height: 1.75rem;
+    color: #36454F;
+    fill: #36454F;
+    @include respond(tab-port){
+        
+    }
+    
 }
 

@@ -3,7 +3,7 @@
     margin: 7rem; 
 
     @include respond(tab-port){
-        margin: 3rem;
+        margin: 1rem;
     } 
 
     &__categorie{
@@ -34,25 +34,29 @@
     list-style: none;
 
     &__link--number{
-        color: #32CD30;
         font-weight: 700;
         font-size: 2rem;
-    }
 
-    /* &__link--number:hover, &__link--number:active{
+        @include respond(tab-port){
+            font-size: 2.3rem;
+        }
+
+    }
+    &__link--number:hover, &__link--number:active{
         color: #fff !important;
-    } */
+    } 
 
     &__link:link, &__link:visited{    
         color: #3F4B3B;
         text-decoration: none;
-        text-transform: uppercase;
+        //text-transform: uppercase;
         display: inline-block;
         padding: 1.5rem 3rem;
         z-index: 10;
+        font-size: 2.2rem;
 
         @include respond(tab-port){
-            font-size: 1rem;
+            font-size: 2.3rem;
         }
     }
 

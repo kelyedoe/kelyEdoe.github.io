@@ -27,14 +27,14 @@ body{
     display: flex;
     align-content: space-between;
     flex-direction: column;
-    gap: 1.2rem;
     background-color: #1F2226;
-    border-radius: 1.5rem;
-    margin-right: 7rem;
+   border-radius: 1.5rem;
+    /*  margin-right: 7rem;
     margin-left: 7rem;
-    margin-top: 5rem;
+    margin-top: 5rem; */
+    margin: 3rem;
     margin-bottom: 5rem;
-    padding: 3rem;
+    padding: 2rem;
 
     &__title{
         font-size: 2rem;
@@ -44,9 +44,10 @@ body{
     &__description{
         //margin-top: 2rem;
         font-size: 1.3rem;
-        font-weight: 500;
         color: #fff;
         font-family: 'lato';
+        padding-bottom: 1.5rem;
+        padding-top: 2.5rem;
     }
     &__tags{
         display: grid;
